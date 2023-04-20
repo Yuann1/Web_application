@@ -26,8 +26,8 @@ function query($query)
     mysqli_close($connection);
    //echo "IT is ok . <br>";
     return $query_result;
-
 }
+
 function fetch()
 {
     $connection = connect();
@@ -94,6 +94,7 @@ if(isset($_POST['delete'])) //delete page will send name属性是delete的东西
 }
 if(isset($_POST['AuthorName']))
 {
+
     $AuthorName = $_POST['AuthorName'];
     $BookName = $_POST['BookName'];
     $PublicationDate = $_POST['PublicationDate'];

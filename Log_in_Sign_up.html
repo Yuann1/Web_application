@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login/Sign Up</title>
+    <script>
+        function validateForm() {
+            var emailInput = document.getElementById("email");
+            var emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            if (!emailPattern.test(emailInput.value)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <style>
+        /* 设置整个页面的背景 */
+        body {
+            background: linear-gradient(to right, #f0f2f5, #e0e4eb);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        /* 添加标题样式 */
+        .title {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 36px;
+            color: #333;
+            text-shadow: 1px 1px 1px #fff, 2px 2px 2px #999;
+        }
+
+        /* 设置表单的样式 */
+        form {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* 设置输入框的样式 */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            width: 350px;
+        }
+
+        /* 设置提交按钮的样式 */
+        input[type="submit"] {
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        /* 设置提交按钮的 hover 样式 */
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        /* 设置两个表单之间的间隔 */
+        form:first-of-type {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+<h2 class="title">Login/Sign Up</h2>
+<div>
+
+
+    <form action="login.php" method="post">
+        <label for="email1">Email:</label>
+        <input type="email"  id="email1" name="email" required>
+        <br>
+        <label for="password1">Password:</label>
+        <input type="password"  id="password1" name="password" required>
+        <br>
+        <input type="submit" value="Sign In" name="signin">
+    </form>
+
+    <form action="signup.php" method="post" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email"  id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="Sign Up" name="signup">
+    </form>
+
+
+</div>
+</body>
+</html>
